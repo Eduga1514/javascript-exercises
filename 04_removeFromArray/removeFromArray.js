@@ -5,14 +5,11 @@ const removeFromArray = function(arr, ...targets) {
     let resultIndex = 0;
 
     while (arrIndex <= arrSize) {
-        if (targets.includes(arr[arrIndex])) {
-            arrIndex++;
-            continue;
+        if (!targets.includes(arr[arrIndex])) {
+            result[resultIndex] = arr[arrIndex];
+            resultIndex++;
         }
-
-        result[resultIndex] = arr[arrIndex];
         arrIndex++;
-        resultIndex++;
     }
 
     return result;
